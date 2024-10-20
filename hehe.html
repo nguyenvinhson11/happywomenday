@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng Ngày Phụ Nữ</title>
+    <link rel="stylesheet" href="hehe.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="message" class="message"></h1>
+        <div class="heart-container">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="rose"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<script>
+    const messages = [
+    "Happy Women's Day!",
+    "Chúc Sin Đầu Moi mãi xinh đẹp, học giỏi, và luôn vui.",
+    "Hãy cố lên!"
+];
+
+let index = 0;
+const messageElement = document.getElementById("message");
+
+function displayMessage() {
+    messageElement.style.opacity = 0; // Ẩn câu trước khi hiện câu mới
+    setTimeout(() => {
+        messageElement.innerText = messages[index];
+        messageElement.style.opacity = 1; // Hiện câu tiếp theo
+        index = (index + 1) % messages.length;
+    }, 500); // Đợi 0.5s trước khi thay đổi câu
+}
+
+setInterval(displayMessage, 3000); // Cứ mỗi 3 giây lại hiện một câu
+
+</script>
